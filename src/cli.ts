@@ -23,12 +23,12 @@ const port = args.find(
 
 if (versionRequested) {
   const packageJson = require("../package.json");
-  console.log(`magicui-mcp v${packageJson.version}`);
+  console.error(`magicui-mcp v${packageJson.version}`);
   process.exit(0);
 }
 
 if (helpRequested) {
-  console.log(`
+  console.error(`
 Magic UI MCP Service
 
 Usage:
