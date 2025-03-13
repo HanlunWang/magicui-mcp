@@ -1,0 +1,61 @@
+{
+  "name": "CoolMode",
+  "type": "component",
+  "description": "Cool mode effect for buttons, links, and other DOMs",
+  "metadata": {
+    "title": "Cool Mode",
+    "date": "2024-06-01",
+    "description": "Cool mode effect for buttons, links, and other DOMs",
+    "author": "Bankkroll",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/cool-mode\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/cool-mode\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/cool-mode\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/cool-mode\""
+  },
+  "props": [
+    {
+      "name": "particle",
+      "type": "String",
+      "default": "\"circle\"",
+      "description": "The particle URL for a custom particle"
+    },
+    {
+      "name": "size",
+      "type": "Number",
+      "default": "Varies",
+      "description": "Size of the particle"
+    },
+    {
+      "name": "particleCount",
+      "type": "Number",
+      "default": "Varies",
+      "description": "The number of particles to generate"
+    },
+    {
+      "name": "speedHorz",
+      "type": "Number",
+      "default": "Varies",
+      "description": "Horizontal speed of the particles"
+    },
+    {
+      "name": "speedUp",
+      "type": "Number",
+      "default": "Varies",
+      "description": "Upward speed of the particles"
+    }
+  ],
+  "usage": "import { Button } from \"@/components/ui/button\";\nimport { CoolMode } from \"@/registry/magicui/cool-mode\";\n\nexport default function CoolModeDemo() {\n  return (\n    <div className=\"relative justify-center\">\n      <CoolMode>\n        <Button>Click Me!</Button>\n      </CoolMode>\n    </div>\n  );\n}\n",
+  "credits": {
+    "inspiration": "",
+    "inspirationUrl": "https://www.x.com/bankkroll_eth"
+  },
+  "examples": [
+    {
+      "name": "Custom",
+      "code": "import { Button } from \"@/components/ui/button\";\nimport { CoolMode } from \"@/registry/magicui/cool-mode\";\n\nexport default function CoolModeCustom() {\n  return (\n    <div className=\"relative justify-center\">\n      <CoolMode\n        options={{\n          particle:\n            \"https://pbs.twimg.com/profile_images/1782811051504885763/YR5-kWOI_400x400.jpg\",\n        }}\n      >\n        <Button>Click Me!</Button>\n      </CoolMode>\n    </div>\n  );\n}\n"
+    }
+  ]
+}

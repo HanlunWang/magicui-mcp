@@ -1,0 +1,76 @@
+{
+  "name": "Particles",
+  "type": "component",
+  "description": "Particles are a fun way to add some visual flair to your website. They can be used to create a sense of depth, movement, and interactivity.",
+  "metadata": {
+    "title": "Particles",
+    "date": "2024-06-04",
+    "description": "Particles are a fun way to add some visual flair to your website. They can be used to create a sense of depth, movement, and interactivity.",
+    "author": "dillionverma",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/particles\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/particles\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/particles\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/particles\""
+  },
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "The class name for the component"
+    },
+    {
+      "name": "quantity",
+      "type": "number",
+      "default": "100",
+      "description": "The number of particles"
+    },
+    {
+      "name": "staticity",
+      "type": "number",
+      "default": "50",
+      "description": "The staticity of the particles"
+    },
+    {
+      "name": "ease",
+      "type": "number",
+      "default": "50",
+      "description": "The ease of the particles"
+    },
+    {
+      "name": "size",
+      "type": "number",
+      "default": "0.4",
+      "description": "The size of the particles"
+    },
+    {
+      "name": "refresh",
+      "type": "boolean",
+      "default": "false",
+      "description": "Whether to refresh the particles"
+    },
+    {
+      "name": "color",
+      "type": "string",
+      "default": "#ffffff",
+      "description": "The color of the particles"
+    },
+    {
+      "name": "vx",
+      "type": "number",
+      "default": "0",
+      "description": "The x velocity of the particles"
+    },
+    {
+      "name": "vy",
+      "type": "number",
+      "default": "0",
+      "description": "The y velocity of the particles"
+    }
+  ],
+  "usage": "\"use client\";\n\nimport { useTheme } from \"next-themes\";\nimport { useEffect, useState } from \"react\";\n\nimport { Particles } from \"@/registry/magicui/particles\";\n\nexport default function ParticlesDemo() {\n  const { resolvedTheme } = useTheme();\n  const [color, setColor] = useState(\"#ffffff\");\n\n  useEffect(() => {\n    setColor(resolvedTheme === \"dark\" ? \"#ffffff\" : \"#000000\");\n  }, [resolvedTheme]);\n\n  return (\n    <div className=\"relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background\">\n      <span className=\"pointer-events-none z-10 whitespace-pre-wrap text-center text-8xl font-semibold leading-none\">\n        Particles\n      </span>\n      <Particles\n        className=\"absolute inset-0 z-0\"\n        quantity={100}\n        ease={80}\n        color={color}\n        refresh\n      />\n    </div>\n  );\n}\n",
+  "credits": {}
+}

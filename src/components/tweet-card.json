@@ -1,0 +1,35 @@
+{
+  "name": "TweetCard",
+  "type": "card",
+  "description": "A card that displays a tweet with the author's name, handle, and profile picture.",
+  "metadata": {
+    "title": "Tweet Card",
+    "date": "2023-10-15",
+    "description": "A card that displays a tweet with the author's name, handle, and profile picture.",
+    "author": "dillionverma",
+    "published": true,
+    "video": "https://cdn.magicui.design/tweet-card.mp4"
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"\"",
+    "npm": "npx shadcn@latest add \"\"",
+    "yarn": "yarn dlx shadcn@latest add \"\"",
+    "bun": "bunx --bun shadcn@latest add \"\""
+  },
+  "props": [],
+  "usage": "import { ClientTweetCard } from \"@/registry/magicui/client-tweet-card\";\n\n/**\n * <TweetCard /> (Server Side Only)\n * <ClientTweetCard /> (Client Side Only)\n */\nexport default function TweetDemo() {\n  return <ClientTweetCard id=\"1668408059125702661\" />;\n}\n",
+  "credits": {
+    "inspiration": "",
+    "inspirationUrl": "https://react-tweet.vercel.app/"
+  },
+  "examples": [
+    {
+      "name": "Images",
+      "code": "import { ClientTweetCard } from \"@/registry/magicui/client-tweet-card\";\n\nexport default function TweetImages() {\n  return <ClientTweetCard id=\"1678577280489234432\" className=\"shadow-2xl\" />;\n}\n"
+    },
+    {
+      "name": "Meta Preview",
+      "code": "import { ClientTweetCard } from \"@/registry/magicui/client-tweet-card\";\n\nexport default function TweetMetaPreview() {\n  return <ClientTweetCard id=\"1675849118445436929\" className=\"shadow-2xl\" />;\n}\n"
+    }
+  ]
+}

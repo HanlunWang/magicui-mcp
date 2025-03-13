@@ -1,0 +1,49 @@
+{
+  "name": "SparklesText",
+  "type": "component",
+  "description": "A dynamic text that generates continuous sparkles with smooth transitions, perfect for highlighting text with animated stars.",
+  "metadata": {
+    "title": "Sparkles Text",
+    "date": "2024-05-30",
+    "description": "A dynamic text that generates continuous sparkles with smooth transitions, perfect for highlighting text with animated stars.",
+    "author": "Draxx0",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/sparkles-text\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/sparkles-text\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/sparkles-text\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/sparkles-text\""
+  },
+  "props": [
+    {
+      "name": "text",
+      "type": "string",
+      "default": "-",
+      "description": "The text to display"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "The class name to be applied to the sparkles text."
+    },
+    {
+      "name": "sparklesCount",
+      "type": "number",
+      "default": "10",
+      "description": "sparkles count that appears on the text"
+    },
+    {
+      "name": "colors",
+      "type": "object",
+      "default": "{first: '#A07CFE', second: '#FE8FB5'}",
+      "description": "the sparkles colors"
+    }
+  ],
+  "usage": "import { SparklesText } from \"@/registry/magicui/sparkles-text\";\n\nexport default function SparklesTextDemo() {\n  return <SparklesText text=\"Magic UI\" />;\n}\n",
+  "credits": {
+    "inspiration": "@simonlejeune",
+    "inspirationUrl": "https://www.simlej.dev/"
+  }
+}

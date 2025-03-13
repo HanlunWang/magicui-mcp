@@ -1,0 +1,46 @@
+{
+  "name": "WordRotate",
+  "type": "component",
+  "description": "A vertical rotation of words",
+  "metadata": {
+    "title": "Word Rotate",
+    "date": "2024-05-21",
+    "description": "A vertical rotation of words",
+    "author": "dillionverma",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/word-rotate\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/word-rotate\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/word-rotate\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/word-rotate\""
+  },
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "The class name to be applied to the component"
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "default": "2500",
+      "description": "Duration of the animation"
+    },
+    {
+      "name": "words",
+      "type": "string[]",
+      "default": "\"\"",
+      "description": "An array of words to rotate through"
+    },
+    {
+      "name": "motionProps",
+      "type": "HTMLMotionProps",
+      "default": "{}",
+      "description": "An object containing motion animation props"
+    }
+  ],
+  "usage": "import { WordRotate } from \"@/registry/magicui/word-rotate\";\n\nexport default function WordRotateDemo() {\n  return (\n    <WordRotate\n      className=\"text-4xl font-bold text-black dark:text-white\"\n      words={[\"Word\", \"Rotate\"]}\n    />\n  );\n}\n",
+  "credits": {}
+}

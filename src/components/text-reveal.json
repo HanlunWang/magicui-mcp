@@ -1,0 +1,22 @@
+{
+  "name": "TextReveal",
+  "type": "component",
+  "description": "Fade in text as you scroll down the page.",
+  "metadata": {
+    "title": "Text Reveal",
+    "date": "2024-04-08",
+    "description": "Fade in text as you scroll down the page.",
+    "author": "dillionverma",
+    "published": true,
+    "video": "https://cdn.magicui.design/text-reveal.mp4"
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/text-reveal\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/text-reveal\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/text-reveal\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/text-reveal\""
+  },
+  "props": [],
+  "usage": "import { TextReveal } from \"@/registry/magicui/text-reveal\";\n\nexport default function TextRevealDemo() {\n  return <TextReveal>Magic UI will change the way you design.</TextReveal>;\n}\n",
+  "credits": {}
+}

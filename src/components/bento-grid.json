@@ -1,0 +1,21 @@
+{
+  "name": "BentoGrid",
+  "type": "component",
+  "description": "Bento grid is a layout used to showcase the features of a product in a simple and elegant way.",
+  "metadata": {
+    "title": "Bento Grid",
+    "date": "2023-11-09",
+    "description": "Bento grid is a layout used to showcase the features of a product in a simple and elegant way.",
+    "author": "dillionverma",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/bento-grid\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/bento-grid\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/bento-grid\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/bento-grid\""
+  },
+  "props": [],
+  "usage": "",
+  "credits": {}
+}

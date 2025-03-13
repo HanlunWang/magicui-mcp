@@ -1,0 +1,55 @@
+{
+  "name": "NeonGradientCard",
+  "type": "card",
+  "description": "A beautiful neon card effect",
+  "metadata": {
+    "title": "Neon Gradient Card",
+    "date": "2024-05-26",
+    "description": "A beautiful neon card effect",
+    "author": "Draxx0",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/neon-gradient-card\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/neon-gradient-card\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/neon-gradient-card\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/neon-gradient-card\""
+  },
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "The class name to be applied to the component"
+    },
+    {
+      "name": "children",
+      "type": "ReactNode",
+      "default": "-",
+      "description": "Children elements"
+    },
+    {
+      "name": "borderSize",
+      "type": "number",
+      "default": "5",
+      "description": "The size of the border"
+    },
+    {
+      "name": "borderRadius",
+      "type": "number",
+      "default": "20",
+      "description": "The size of the radius"
+    },
+    {
+      "name": "neonColors",
+      "type": "object",
+      "default": "{ firstColor: \"#ff00aa\", secondColor: \"#00FFF1\" }",
+      "description": "The colors of the neon gradient"
+    }
+  ],
+  "usage": "import { NeonGradientCard } from \"@/registry/magicui/neon-gradient-card\";\n\nexport default function NeonGradientCardDemo() {\n  return (\n    <NeonGradientCard className=\"max-w-sm items-center justify-center text-center\">\n      <span className=\"pointer-events-none z-10 h-full whitespace-pre-wrap bg-gradient-to-br from-[#ff2975] from-35% to-[#00FFF1] bg-clip-text text-center text-6xl font-bold leading-none tracking-tighter text-transparent dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]\">\n        Neon Gradient Card\n      </span>\n    </NeonGradientCard>\n  );\n}\n",
+  "credits": {
+    "inspiration": "@Unleashed",
+    "inspirationUrl": "https://unleashed-design.de/"
+  }
+}

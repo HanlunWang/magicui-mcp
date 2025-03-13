@@ -1,0 +1,43 @@
+{
+  "name": "AnimatedSubscribeButton",
+  "type": "button",
+  "description": "An animated subscribe button useful for showing a micro animation from intial to final result.",
+  "metadata": {
+    "title": "Animated Subscribe Button",
+    "date": "2024-05-30",
+    "description": "An animated subscribe button useful for showing a micro animation from intial to final result.",
+    "author": "pilladipesh33",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/animated-subscribe-button\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/animated-subscribe-button\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/animated-subscribe-button\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/animated-subscribe-button\""
+  },
+  "props": [
+    {
+      "name": "subscribeStatus",
+      "type": "boolean",
+      "default": "false",
+      "description": "A boolean flag to check the condition for the button. This property can be used to toggle the button's state, such as subscribed or unsubscribed."
+    },
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "default": "-",
+      "description": "The content to be displayed inside the button. Should contain two children - first for unsubscribed state and second for subscribed state."
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "Optional class name to be applied to the button for custom styling."
+    }
+  ],
+  "usage": "import { AnimatedSubscribeButton } from \"@/registry/magicui/animated-subscribe-button\";\nimport { CheckIcon, ChevronRightIcon } from \"lucide-react\";\n\nexport default function AnimatedSubscribeButtonDemo() {\n  return (\n    <AnimatedSubscribeButton className=\"w-36\">\n      <span className=\"group inline-flex items-center\">\n        Follow\n        <ChevronRightIcon className=\"ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1\" />\n      </span>\n      <span className=\"group inline-flex items-center\">\n        <CheckIcon className=\"mr-2 size-4\" />\n        Subscribed\n      </span>\n    </AnimatedSubscribeButton>\n  );\n}\n",
+  "credits": {
+    "inspiration": "@dipesh",
+    "inspirationUrl": "https://github.com/pilladipesh33"
+  }
+}

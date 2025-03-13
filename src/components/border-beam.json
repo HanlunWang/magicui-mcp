@@ -1,0 +1,36 @@
+{
+  "name": "BorderBeam",
+  "type": "component",
+  "description": "An animated beam of light which travels along the border of its container.",
+  "metadata": {
+    "title": "Border Beam",
+    "date": "2024-02-06",
+    "description": "An animated beam of light which travels along the border of its container.",
+    "author": "dillionverma",
+    "published": true,
+    "video": "https://cdn.magicui.design/border-beam.mp4"
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/border-beam\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/border-beam\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/border-beam\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/border-beam\""
+  },
+  "props": [],
+  "usage": "import { Button } from \"@/components/ui/button\";\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/card\";\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\nimport { BorderBeam } from \"@/registry/magicui/border-beam\";\n\nexport default function Component() {\n  return (\n    <Card className=\"relative w-[350px] overflow-hidden\">\n      <CardHeader>\n        <CardTitle>Login</CardTitle>\n        <CardDescription>\n          Enter your credentials to access your account.\n        </CardDescription>\n      </CardHeader>\n      <CardContent>\n        <form>\n          <div className=\"grid w-full items-center gap-4\">\n            <div className=\"flex flex-col space-y-1.5\">\n              <Label htmlFor=\"email\">Email</Label>\n              <Input id=\"email\" type=\"email\" placeholder=\"Enter your email\" />\n            </div>\n            <div className=\"flex flex-col space-y-1.5\">\n              <Label htmlFor=\"password\">Password</Label>\n              <Input\n                id=\"password\"\n                type=\"password\"\n                placeholder=\"Enter your password\"\n              />\n            </div>\n          </div>\n        </form>\n      </CardContent>\n      <CardFooter className=\"flex justify-between\">\n        <Button variant=\"outline\">Register</Button>\n        <Button>Login</Button>\n      </CardFooter>\n      <BorderBeam duration={8} size={100} />\n    </Card>\n  );\n}\n",
+  "credits": {},
+  "examples": [
+    {
+      "name": "Demo 2",
+      "code": "import { Button } from \"@/components/ui/button\";\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/card\";\nimport { BorderBeam } from \"@/registry/magicui/border-beam\";\nimport { Play, SkipBack, SkipForward } from \"lucide-react\";\n\nexport default function MusicPlayer() {\n  return (\n    <Card className=\"relative w-[350px] overflow-hidden\">\n      <CardHeader>\n        <CardTitle>Now Playing</CardTitle>\n        <CardDescription>Stairway to Heaven - Led Zeppelin</CardDescription>\n      </CardHeader>\n      <CardContent>\n        <div className=\"flex flex-col items-center gap-4\">\n          <div className=\"h-48 w-48 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500\" />\n          <div className=\"h-1 w-full rounded-full bg-secondary\">\n            <div className=\"h-full w-1/3 rounded-full bg-primary\" />\n          </div>\n          <div className=\"flex w-full justify-between text-sm text-muted-foreground\">\n            <span>2:45</span>\n            <span>8:02</span>\n          </div>\n        </div>\n      </CardContent>\n      <CardFooter className=\"flex justify-center gap-4\">\n        <Button variant=\"outline\" size=\"icon\" className=\"rounded-full\">\n          <SkipBack className=\"size-4\" />\n        </Button>\n        <Button size=\"icon\" className=\"rounded-full\">\n          <Play className=\"size-4\" />\n        </Button>\n        <Button variant=\"outline\" size=\"icon\" className=\"rounded-full\">\n          <SkipForward className=\"size-4\" />\n        </Button>\n      </CardFooter>\n      <BorderBeam\n        duration={6}\n        size={400}\n        className=\"from-transparent via-red-500 to-transparent\"\n      />\n      <BorderBeam\n        duration={6}\n        delay={3}\n        size={400}\n        className=\"from-transparent via-blue-500 to-transparent\"\n      />\n    </Card>\n  );\n}\n"
+    },
+    {
+      "name": "Demo 3",
+      "code": "import { Button } from \"@/components/ui/button\";\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/card\";\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\nimport { BorderBeam } from \"@/registry/magicui/border-beam\";\n\nexport default function LoginForm() {\n  return (\n    <Card className=\"relative w-[350px] overflow-hidden\">\n      <CardHeader>\n        <CardTitle>Login</CardTitle>\n        <CardDescription>\n          Enter your credentials to access your account.\n        </CardDescription>\n      </CardHeader>\n      <CardContent>\n        <form>\n          <div className=\"grid w-full items-center gap-4\">\n            <div className=\"flex flex-col space-y-1.5\">\n              <Label htmlFor=\"email\">Email</Label>\n              <Input id=\"email\" type=\"email\" placeholder=\"Enter your email\" />\n            </div>\n            <div className=\"flex flex-col space-y-1.5\">\n              <Label htmlFor=\"password\">Password</Label>\n              <Input\n                id=\"password\"\n                type=\"password\"\n                placeholder=\"Enter your password\"\n              />\n            </div>\n          </div>\n        </form>\n      </CardContent>\n      <CardFooter className=\"flex justify-between\">\n        <Button variant=\"outline\">Register</Button>\n        <Button>Login</Button>\n      </CardFooter>\n      <BorderBeam\n        duration={4}\n        size={300}\n        reverse\n        className=\"from-transparent via-green-500 to-transparent\"\n      />\n    </Card>\n  );\n}\n"
+    },
+    {
+      "name": "Demo 4",
+      "code": "import { Button } from \"@/components/ui/button\";\nimport { BorderBeam } from \"@/registry/magicui/border-beam\";\n\nexport default function Component() {\n  return (\n    <Button className=\"relative overflow-hidden\" size=\"lg\" variant=\"outline\">\n      Buy Now\n      <BorderBeam\n        size={40}\n        initialOffset={20}\n        className=\"from-transparent via-yellow-500 to-transparent\"\n        transition={{\n          type: \"spring\",\n          stiffness: 60,\n          damping: 20,\n        }}\n      />\n    </Button>\n  );\n}\n"
+    }
+  ]
+}

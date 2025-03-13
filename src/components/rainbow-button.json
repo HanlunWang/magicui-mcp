@@ -1,0 +1,34 @@
+{
+  "name": "RainbowButton",
+  "type": "button",
+  "description": "An animated button with a rainbow effect.",
+  "metadata": {
+    "title": "Rainbow Button",
+    "date": "2024-09-19",
+    "description": "An animated button with a rainbow effect.",
+    "author": "dillionverma",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/rainbow-button\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/rainbow-button\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/rainbow-button\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/rainbow-button\""
+  },
+  "props": [
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "default": "-",
+      "description": "The content to be displayed inside the button."
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "Additional CSS classes to be applied to the button."
+    }
+  ],
+  "usage": "import { RainbowButton } from \"@/registry/magicui/rainbow-button\";\n\nexport default function RainbowButtonDemo() {\n  return <RainbowButton>Get Unlimited Access</RainbowButton>;\n}\n",
+  "credits": {}
+}

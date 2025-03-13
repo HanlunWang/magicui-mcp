@@ -1,0 +1,49 @@
+{
+  "name": "RippleButton",
+  "type": "button",
+  "description": "An animated button with ripple useful for user engagement.",
+  "metadata": {
+    "title": "Ripple Button",
+    "date": "2024-11-17",
+    "description": "An animated button with ripple useful for user engagement.",
+    "author": "Sidd5arth",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/ripple-button\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/ripple-button\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/ripple-button\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/ripple-button\""
+  },
+  "props": [
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "default": "-",
+      "description": "The content of the button."
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "Additional class names for the button."
+    },
+    {
+      "name": "rippleColor",
+      "type": "string",
+      "default": "-",
+      "description": "The rbg numbers only for the color of the rippling waves."
+    },
+    {
+      "name": "duration",
+      "type": "string",
+      "default": "-",
+      "description": "The time span of one ripple."
+    }
+  ],
+  "usage": "import { RippleButton } from \"@/registry/magicui/ripple-button\";\n\nexport default function RippleButtonDemo() {\n  return <RippleButton rippleColor=\"#ADD8E6\">Click me</RippleButton>;\n}\n",
+  "credits": {
+    "inspiration": "@Sidd5arth",
+    "inspirationUrl": "https://github.com/Sidd5arth"
+  }
+}

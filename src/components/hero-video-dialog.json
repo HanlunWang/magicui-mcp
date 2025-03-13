@@ -1,0 +1,52 @@
+{
+  "name": "HeroVideoDialog",
+  "type": "component",
+  "description": "A hero video dialog component.",
+  "metadata": {
+    "title": "Hero Video Dialog",
+    "date": "2024-08-26",
+    "description": "A hero video dialog component.",
+    "author": "dillionverma",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/hero-video-dialog\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/hero-video-dialog\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/hero-video-dialog\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/hero-video-dialog\""
+  },
+  "props": [
+    {
+      "name": "animationStyle",
+      "type": "string",
+      "default": "\"from-center\"",
+      "description": "Animation style for the dialog"
+    },
+    {
+      "name": "videoSrc",
+      "type": "string",
+      "default": "-",
+      "description": "URL of the video to be played"
+    },
+    {
+      "name": "thumbnailSrc",
+      "type": "string",
+      "default": "-",
+      "description": "URL of the thumbnail image"
+    },
+    {
+      "name": "thumbnailAlt",
+      "type": "string",
+      "default": "\"Video thumbnail\"",
+      "description": "Alt text for the thumbnail image"
+    }
+  ],
+  "usage": "import HeroVideoDialog from \"@/registry/magicui/hero-video-dialog\";\n\nexport default function HeroVideoDialogDemo() {\n  return (\n    <div className=\"relative\">\n      <HeroVideoDialog\n        className=\"block dark:hidden\"\n        animationStyle=\"from-center\"\n        videoSrc=\"https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb\"\n        thumbnailSrc=\"https://startup-template-sage.vercel.app/hero-light.png\"\n        thumbnailAlt=\"Hero Video\"\n      />\n      <HeroVideoDialog\n        className=\"hidden dark:block\"\n        animationStyle=\"from-center\"\n        videoSrc=\"https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb\"\n        thumbnailSrc=\"https://startup-template-sage.vercel.app/hero-dark.png\"\n        thumbnailAlt=\"Hero Video\"\n      />\n    </div>\n  );\n}\n",
+  "credits": {},
+  "examples": [
+    {
+      "name": "Demo Top In Bottom Out",
+      "code": "import HeroVideoDialog from \"@/registry/magicui/hero-video-dialog\";\n\nexport default function HeroVideoDialogDemoTopInBottomOut() {\n  return (\n    <div className=\"relative\">\n      <HeroVideoDialog\n        className=\"block dark:hidden\"\n        animationStyle=\"top-in-bottom-out\"\n        videoSrc=\"https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb\"\n        thumbnailSrc=\"https://startup-template-sage.vercel.app/hero-light.png\"\n        thumbnailAlt=\"Hero Video\"\n      />\n      <HeroVideoDialog\n        className=\"hidden dark:block\"\n        animationStyle=\"top-in-bottom-out\"\n        videoSrc=\"https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb\"\n        thumbnailSrc=\"https://startup-template-sage.vercel.app/hero-dark.png\"\n        thumbnailAlt=\"Hero Video\"\n      />\n    </div>\n  );\n}\n"
+    }
+  ]
+}

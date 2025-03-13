@@ -1,0 +1,72 @@
+{
+  "name": "Safari",
+  "type": "component",
+  "description": "A safari browser mockup to showcase your website.",
+  "metadata": {
+    "title": "Safari",
+    "date": "2024-09-01",
+    "description": "A safari browser mockup to showcase your website.",
+    "author": "dillionverma",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/safari\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/safari\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/safari\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/safari\""
+  },
+  "props": [
+    {
+      "name": "url",
+      "type": "string",
+      "default": "-",
+      "description": "The URL to display in the Safari address bar"
+    },
+    {
+      "name": "imageSrc",
+      "type": "string",
+      "default": "-",
+      "description": "The source URL of the image to display in the Safari window"
+    },
+    {
+      "name": "videoSrc",
+      "type": "string",
+      "default": "-",
+      "description": "The source URL of the video to display in the Safari window"
+    },
+    {
+      "name": "width",
+      "type": "number",
+      "default": "1203",
+      "description": "The width of the Safari window"
+    },
+    {
+      "name": "height",
+      "type": "number",
+      "default": "753",
+      "description": "The height of the Safari window"
+    },
+    {
+      "name": "mode",
+      "type": "SafariMode",
+      "default": "\"default\"",
+      "description": "The display mode of the Safari window."
+    }
+  ],
+  "usage": "import { Safari } from \"@/registry/magicui/safari\";\n\nexport default function SafariDemo() {\n  return (\n    <div className=\"relative\">\n      <Safari url=\"magicui.design\" className=\"size-full\" />\n    </div>\n  );\n}\n",
+  "credits": {},
+  "examples": [
+    {
+      "name": "Demo 2",
+      "code": "import { Safari } from \"@/registry/magicui/safari\";\n\nexport default function SafariDemo() {\n  return (\n    <div className=\"relative\">\n      <Safari\n        url=\"magicui.design\"\n        className=\"size-full\"\n        imageSrc=\"https://via.placeholder.com/1200x750\"\n      />\n    </div>\n  );\n}\n"
+    },
+    {
+      "name": "Demo 3",
+      "code": "import { Safari } from \"@/registry/magicui/safari\";\n\nexport default function SafariDemo() {\n  return (\n    <div className=\"relative\">\n      <Safari\n        url=\"magicui.design\"\n        className=\"size-full\"\n        videoSrc=\"https://videos.pexels.com/video-files/27180348/12091515_2560_1440_50fps.mp4\"\n      />\n    </div>\n  );\n}\n"
+    },
+    {
+      "name": "Demo 4",
+      "code": "import { Safari } from \"@/registry/magicui/safari\";\n\nexport default function SafariDemo() {\n  return (\n    <div className=\"relative\">\n      <Safari url=\"magicui.design\" mode=\"simple\" className=\"size-full\" />\n    </div>\n  );\n}\n"
+    }
+  ]
+}

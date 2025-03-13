@@ -1,0 +1,31 @@
+{
+  "name": "ScrollProgress",
+  "type": "component",
+  "description": "Animated Scroll Progress for your pages",
+  "metadata": {
+    "title": "Scroll Progress",
+    "date": "2024-12-19",
+    "description": "Animated Scroll Progress for your pages",
+    "author": "dipesh_the_dev",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/scroll-progress\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/scroll-progress\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/scroll-progress\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/scroll-progress\""
+  },
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "The class name to be applied to the component"
+    }
+  ],
+  "usage": "import { ScrollProgress } from \"@/registry/magicui/scroll-progress\";\n\nexport default function ScrollProgressDemo() {\n  return (\n    <div className=\"z-10 rounded-lg p-4\">\n      <ScrollProgress className=\"top-[65px]\" />\n      <h2 className=\"pb-4 font-bold\">\n        Note: The scroll progress is shown below the navbar of the page.\n      </h2>\n    </div>\n  );\n}\n",
+  "credits": {
+    "inspiration": "",
+    "inspirationUrl": "https://twitter.com/dipesh_the_dev"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "name": "SpinningText",
+  "type": "component",
+  "description": "The Spinning Text component animates text in a circular motion with customizable speed, direction, color, and transitions for dynamic and engaging effects.",
+  "metadata": {
+    "title": "Spinning Text",
+    "date": "2025-02-09",
+    "description": "The Spinning Text component animates text in a circular motion with customizable speed, direction, color, and transitions for dynamic and engaging effects.",
+    "author": "aayushbharti",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/spinning-text\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/spinning-text\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/spinning-text\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/spinning-text\""
+  },
+  "props": [
+    {
+      "name": "style",
+      "type": "CSSProperties",
+      "default": "{}",
+      "description": "Custom styles for the text container."
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "default": "10",
+      "description": "The duration of the full circular rotation animation."
+    },
+    {
+      "name": "reverse",
+      "type": "boolean",
+      "default": "false",
+      "description": "Determines if the animation should rotate in reverse."
+    },
+    {
+      "name": "fontSize",
+      "type": "number",
+      "default": "1",
+      "description": "The font size of the text being animated in rem."
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "default": "5",
+      "description": "The radius of the circular path for the text animation."
+    }
+  ],
+  "usage": "import { SpinningText } from \"@/registry/magicui/spinning-text\";\n\nexport default function SpinningTextBasic() {\n  return <SpinningText>learn more • earn more • grow more •</SpinningText>;\n}\n",
+  "credits": {
+    "inspiration": "@AayushBharti",
+    "inspirationUrl": "https://github.com/AayushBharti"
+  },
+  "examples": [
+    {
+      "name": "Demo 2",
+      "code": "import { SpinningText } from \"@/registry/magicui/spinning-text\";\n\nexport default function SpinningTextBasic() {\n  return (\n    <SpinningText reverse className=\"text-4xl\" duration={4} radius={6}>\n      learn more • earn more • grow more •\n    </SpinningText>\n  );\n}\n"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "MorphingText",
+  "type": "component",
+  "description": "A dynamic text morphing component for Magic UI.",
+  "metadata": {
+    "title": "Morphing Text",
+    "date": "2024-09-02",
+    "description": "A dynamic text morphing component for Magic UI.",
+    "author": "magicui",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/morphing-text\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/morphing-text\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/morphing-text\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/morphing-text\""
+  },
+  "props": [
+    {
+      "name": "texts",
+      "type": "string[]",
+      "default": "[]",
+      "description": "Array of texts to morph between"
+    },
+    {
+      "name": "className",
+      "type": "string?",
+      "default": "\"\"",
+      "description": "Additional classes for the container"
+    }
+  ],
+  "usage": "import { MorphingText } from \"@/registry/magicui/morphing-text\";\n\nconst texts = [\n  \"Hello\",\n  \"Morphing\",\n  \"Text\",\n  \"Animation\",\n  \"React\",\n  \"Component\",\n  \"Smooth\",\n  \"Transition\",\n  \"Engaging\",\n];\n\nexport default function MorphingTextDemo() {\n  return <MorphingText texts={texts} />;\n}\n",
+  "credits": {
+    "inspiration": "@luis",
+    "inspirationUrl": "https://luis-code.vercel.app/"
+  }
+}

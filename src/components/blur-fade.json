@@ -1,0 +1,88 @@
+{
+  "name": "BlurFade",
+  "type": "component",
+  "description": "Blur fade in and out animation. Used to smoothly fade in and out content.",
+  "metadata": {
+    "title": "Blur Fade",
+    "date": "2024-07-07",
+    "description": "Blur fade in and out animation. Used to smoothly fade in and out content.",
+    "author": "dillionverma",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/blur-fade\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/blur-fade\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/blur-fade\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/blur-fade\""
+  },
+  "props": [
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "default": "-",
+      "description": "The content to be animated"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "The class name to be applied to the component"
+    },
+    {
+      "name": "variant",
+      "type": "object",
+      "default": "-",
+      "description": "Custom animation variants for motion component"
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "default": "0.4",
+      "description": "Duration (seconds) for the animation"
+    },
+    {
+      "name": "delay",
+      "type": "number",
+      "default": "0",
+      "description": "Delay (seconds) before the animation starts"
+    },
+    {
+      "name": "offset",
+      "type": "number",
+      "default": "6",
+      "description": "Offset for the animation"
+    },
+    {
+      "name": "direction",
+      "type": "string",
+      "default": "\"down\"",
+      "description": "Direction for the animation (`up`, `down`, `left`, `right`)"
+    },
+    {
+      "name": "inView",
+      "type": "boolean",
+      "default": "false",
+      "description": "Whether to trigger animation when component is in view"
+    },
+    {
+      "name": "inViewMargin",
+      "type": "MarginType",
+      "default": "\"-50px\"",
+      "description": "Margin for triggering the in-view animation"
+    },
+    {
+      "name": "blur",
+      "type": "string",
+      "default": "\"6px\"",
+      "description": "Amount of blur to apply during the animation"
+    }
+  ],
+  "usage": "/* eslint-disable @next/next/no-img-element */\nimport { BlurFade } from \"@/registry/magicui/blur-fade\";\n\nconst images = Array.from({ length: 9 }, (_, i) => {\n  const isLandscape = i % 2 === 0;\n  const width = isLandscape ? 800 : 600;\n  const height = isLandscape ? 600 : 800;\n  return `https://picsum.photos/seed/${i + 1}/${width}/${height}`;\n});\n\nexport default function BlurFadeDemo() {\n  return (\n    <section id=\"photos\">\n      <div className=\"columns-2 gap-4 sm:columns-3\">\n        {images.map((imageUrl, idx) => (\n          <BlurFade key={imageUrl} delay={0.25 + idx * 0.05} inView>\n            <img\n              className=\"mb-4 size-full rounded-lg object-contain\"\n              src={imageUrl}\n              alt={`Random stock image ${idx + 1}`}\n            />\n          </BlurFade>\n        ))}\n      </div>\n    </section>\n  );\n}\n",
+  "credits": {},
+  "examples": [
+    {
+      "name": "Text Demo",
+      "code": "import { BlurFade } from \"@/registry/magicui/blur-fade\";\n\nexport default function BlurFadeTextDemo() {\n  return (\n    <section id=\"header\">\n      <BlurFade delay={0.25} inView>\n        <h2 className=\"text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none\">\n          Hello World 👋\n        </h2>\n      </BlurFade>\n      <BlurFade delay={0.25 * 2} inView>\n        <span className=\"text-pretty text-xl tracking-tighter sm:text-3xl xl:text-4xl/none\">\n          Nice to meet you\n        </span>\n      </BlurFade>\n    </section>\n  );\n}\n"
+    }
+  ]
+}

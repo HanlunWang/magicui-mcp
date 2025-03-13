@@ -1,0 +1,40 @@
+{
+  "name": "LineShadowText",
+  "type": "component",
+  "description": "A text component with a moving line shadow.",
+  "metadata": {
+    "title": "Line Shadow Text",
+    "date": "2025-01-11",
+    "description": "A text component with a moving line shadow.",
+    "author": "magicui",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/line-shadow-text\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/line-shadow-text\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/line-shadow-text\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/line-shadow-text\""
+  },
+  "props": [
+    {
+      "name": "shadowColor",
+      "type": "string",
+      "default": "\"black\"",
+      "description": "The color of the shadow effect"
+    },
+    {
+      "name": "children",
+      "type": "string",
+      "default": "-",
+      "description": "The text to display with shadow effect"
+    },
+    {
+      "name": "as",
+      "type": "string",
+      "default": "\"span\"",
+      "description": "The HTML element to render the text as"
+    }
+  ],
+  "usage": "\"use client\";\n\nimport { LineShadowText } from \"@/registry/magicui/line-shadow-text\";\nimport { useTheme } from \"next-themes\";\n\nexport default function LineShadowTextDemo() {\n  const theme = useTheme();\n  const shadowColor = theme.resolvedTheme === \"dark\" ? \"white\" : \"black\";\n  return (\n    <h1 className=\"text-balance text-5xl font-semibold leading-none tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl\">\n      Ship\n      <LineShadowText className=\"italic\" shadowColor={shadowColor}>\n        Fast\n      </LineShadowText>\n    </h1>\n  );\n}\n",
+  "credits": {}
+}

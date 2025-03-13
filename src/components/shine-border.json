@@ -1,0 +1,46 @@
+{
+  "name": "ShineBorder",
+  "type": "component",
+  "description": "Shine border is an animated background border effect.",
+  "metadata": {
+    "title": "Shine Border",
+    "date": "2024-05-25",
+    "description": "Shine border is an animated background border effect.",
+    "author": "unnamed-lab",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/shine-border\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/shine-border\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/shine-border\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/shine-border\""
+  },
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "The class name to be applied to the component."
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "default": "14",
+      "description": "Defines the animation duration to be applied on the shining border."
+    },
+    {
+      "name": "shineColor",
+      "type": "string \\",
+      "default": "string[]",
+      "description": "`\"#000000\"`"
+    }
+  ],
+  "usage": "import { Button } from \"@/components/ui/button\";\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/card\";\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\nimport { ShineBorder } from \"@/registry/magicui/shine-border\";\n\nexport default function ShineBorderDemo() {\n  return (\n    <Card className=\"relative overflow-hidden\">\n      <ShineBorder shineColor={[\"#A07CFE\", \"#FE8FB5\", \"#FFBE7B\"]} />\n      <CardHeader>\n        <CardTitle>Login</CardTitle>\n        <CardDescription>\n          Enter your credentials to access your account\n        </CardDescription>\n      </CardHeader>\n      <CardContent>\n        <form>\n          <div className=\"grid gap-4\">\n            <div className=\"grid gap-2\">\n              <Label htmlFor=\"email\">Email</Label>\n              <Input id=\"email\" type=\"email\" placeholder=\"name@example.com\" />\n            </div>\n            <div className=\"grid gap-2\">\n              <Label htmlFor=\"password\">Password</Label>\n              <Input id=\"password\" type=\"password\" />\n            </div>\n          </div>\n        </form>\n      </CardContent>\n      <CardFooter>\n        <Button className=\"w-full\">Sign In</Button>\n      </CardFooter>\n    </Card>\n  );\n}\n",
+  "credits": {},
+  "examples": [
+    {
+      "name": "Demo 2",
+      "code": "\"use client\";\n\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/card\";\nimport { Input } from \"@/components/ui/input\";\nimport { Label } from \"@/components/ui/label\";\nimport { ShineBorder } from \"@/registry/magicui/shine-border\";\nimport { useTheme } from \"next-themes\";\n\nexport default function ShineBorderDemo2() {\n  const theme = useTheme();\n  return (\n    <Card className=\"relative overflow-hidden\">\n      <ShineBorder shineColor={theme.theme === \"dark\" ? \"white\" : \"black\"} />\n      <CardHeader>\n        <CardTitle>Login</CardTitle>\n        <CardDescription>\n          Enter your credentials to access your account\n        </CardDescription>\n      </CardHeader>\n      <CardContent>\n        <form>\n          <div className=\"grid gap-4\">\n            <div className=\"grid gap-2\">\n              <Label htmlFor=\"email\">Email</Label>\n              <Input id=\"email\" type=\"email\" placeholder=\"name@example.com\" />\n            </div>\n            <div className=\"grid gap-2\">\n              <Label htmlFor=\"password\">Password</Label>\n              <Input id=\"password\" type=\"password\" />\n            </div>\n          </div>\n        </form>\n      </CardContent>\n      <CardFooter>\n        <Button className=\"w-full\">Sign In</Button>\n      </CardFooter>\n    </Card>\n  );\n}\n"
+    }
+  ]
+}

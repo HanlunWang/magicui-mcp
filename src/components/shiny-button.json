@@ -1,0 +1,37 @@
+{
+  "name": "ShinyButton",
+  "type": "button",
+  "description": "A shiny button component with dynamic styles in the dark mode or light mode.",
+  "metadata": {
+    "title": "Shiny Button",
+    "date": "2024-05-24",
+    "description": "A shiny button component with dynamic styles in the dark mode or light mode.",
+    "author": "luis-codex",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/shiny-button\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/shiny-button\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/shiny-button\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/shiny-button\""
+  },
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "The class name to be applied to the component"
+    },
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "default": "-",
+      "description": "The content to be displayed inside the button"
+    }
+  ],
+  "usage": "import { ShinyButton } from \"@/registry/magicui/shiny-button\";\n\nexport default function ShinyButtonDemo() {\n  return <ShinyButton>Shiny Button</ShinyButton>;\n}\n",
+  "credits": {
+    "inspiration": "@luis",
+    "inspirationUrl": "https://luis-code.vercel.app/"
+  }
+}

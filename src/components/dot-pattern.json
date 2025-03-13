@@ -1,0 +1,32 @@
+{
+  "name": "DotPattern",
+  "type": "component",
+  "description": "A background dot pattern made with SVGs, fully customizable using Tailwind CSS.",
+  "metadata": {
+    "title": "Dot Pattern",
+    "date": "2023-07-20",
+    "description": "A background dot pattern made with SVGs, fully customizable using Tailwind CSS.",
+    "author": "dillionverma",
+    "published": true,
+    "video": "https://cdn.magicui.design/dot-pattern.mp4"
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/dot-pattern\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/dot-pattern\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/dot-pattern\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/dot-pattern\""
+  },
+  "props": [],
+  "usage": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport { DotPattern } from \"@/registry/magicui/dot-pattern\";\n\nexport default function DotPatternDemo() {\n  return (\n    <div className=\"relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background\">\n      <DotPattern\n        className={cn(\n          \"[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]\",\n        )}\n      />\n    </div>\n  );\n}\n",
+  "credits": {},
+  "examples": [
+    {
+      "name": "Linear Gradient",
+      "code": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport { DotPattern } from \"@/registry/magicui/dot-pattern\";\n\nexport default function DotPatternLinearGradient() {\n  return (\n    <div className=\"relative flex size-full items-center justify-center overflow-hidden rounded-lg border bg-background p-20\">\n      <DotPattern\n        width={20}\n        height={20}\n        cx={1}\n        cy={1}\n        cr={1}\n        className={cn(\n          \"[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] \",\n        )}\n      />\n    </div>\n  );\n}\n"
+    },
+    {
+      "name": "With Glow Effect",
+      "code": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport { DotPattern } from \"@/registry/magicui/dot-pattern\";\n\nexport default function DotPatternWithGlowEffectDemo() {\n  return (\n    <div className=\"relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden\">\n      <DotPattern\n        glow={true}\n        className={cn(\n          \"[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]\",\n        )}\n      />\n    </div>\n  );\n}\n"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "name": "FlipText",
+  "type": "component",
+  "description": "Text flipping character animation",
+  "metadata": {
+    "title": "Flip Text",
+    "date": "2024-05-23",
+    "description": "Text flipping character animation",
+    "author": "wellitsabhi",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/flip-text\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/flip-text\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/flip-text\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/flip-text\""
+  },
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "The class name to be applied to the component"
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "default": "0.5",
+      "description": "Duration of the animation"
+    },
+    {
+      "name": "delayMultiple",
+      "type": "number",
+      "default": "0.08",
+      "description": "Transition delay multiplier."
+    },
+    {
+      "name": "variants",
+      "type": "Variants",
+      "default": "{}",
+      "description": "An object containing motion variants"
+    },
+    {
+      "name": "as",
+      "type": "ElementType",
+      "default": "span",
+      "description": "The element type of the component"
+    },
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "default": "required",
+      "description": "The children of the component"
+    }
+  ],
+  "usage": "import { FlipText } from \"@/registry/magicui/flip-text\";\n\nexport default function FlipTextDemo() {\n  return (\n    <FlipText className=\"text-4xl font-bold -tracking-widest text-black dark:text-white md:text-7xl md:leading-[5rem]\">\n      Flip Text\n    </FlipText>\n  );\n}\n",
+  "credits": {}
+}

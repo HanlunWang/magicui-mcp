@@ -1,0 +1,58 @@
+{
+  "name": "InteractiveGridPattern",
+  "type": "component",
+  "description": "A interactive background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+  "metadata": {
+    "title": "Interactive Grid Pattern",
+    "date": "2024-12-31",
+    "description": "A interactive background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
+    "author": "h3rmel",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/interactive-grid-pattern\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/interactive-grid-pattern\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/interactive-grid-pattern\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/interactive-grid-pattern\""
+  },
+  "props": [
+    {
+      "name": "width",
+      "type": "number",
+      "default": "Width of each square in the grid",
+      "description": "`40`"
+    },
+    {
+      "name": "height",
+      "type": "number",
+      "default": "Height of each square in the grid",
+      "description": "`40`"
+    },
+    {
+      "name": "squares",
+      "type": "[number, number]",
+      "default": "Number of squares in the grid. First number is horizontal squares, second is vertical squares",
+      "description": "`[24,24]`"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": "Class name applied to the grid container",
+      "description": "-"
+    },
+    {
+      "name": "squaresClassName",
+      "type": "string",
+      "default": "Class name applied to individual squares in the grid",
+      "description": "-"
+    }
+  ],
+  "usage": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport { InteractiveGridPattern } from \"@/registry/magicui/interactive-grid-pattern\";\n\nexport default function InteractiveGridPatternDemo() {\n  return (\n    <div className=\"relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background\">\n      <InteractiveGridPattern\n        className={cn(\n          \"[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]\",\n          \"inset-x-0 inset-y-[-30%] h-[200%] skew-y-12\",\n        )}\n      />\n    </div>\n  );\n}\n",
+  "credits": {},
+  "examples": [
+    {
+      "name": "Demo 2",
+      "code": "\"use client\";\n\nimport { cn } from \"@/lib/utils\";\nimport { InteractiveGridPattern } from \"@/registry/magicui/interactive-grid-pattern\";\n\nexport default function InteractiveGridPatternDemo() {\n  return (\n    <div className=\"relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background\">\n      <InteractiveGridPattern\n        className={cn(\n          \"[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]\",\n        )}\n        width={20}\n        height={20}\n        squares={[80, 80]}\n        squaresClassName=\"hover:fill-blue-500\"\n      />\n    </div>\n  );\n}\n"
+    }
+  ]
+}

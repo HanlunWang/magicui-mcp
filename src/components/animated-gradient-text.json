@@ -1,0 +1,59 @@
+{
+  "name": "AnimatedGradientText",
+  "type": "component",
+  "description": "An animated gradient background which transitions between colors for text.",
+  "metadata": {
+    "title": "Animated Gradient Text",
+    "date": "2024-04-09",
+    "description": "An animated gradient background which transitions between colors for text.",
+    "author": "dillionverma",
+    "published": true,
+    "video": "https://cdn.magicui.design/animated-gradient-text.mp4"
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/animated-gradient-text\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/animated-gradient-text\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/animated-gradient-text\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/animated-gradient-text\""
+  },
+  "props": [
+    {
+      "name": "children",
+      "type": "node",
+      "default": "-",
+      "description": "The children passed into the component"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "The class name to be applied"
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "default": "1",
+      "description": "The speed of the gradient animation"
+    },
+    {
+      "name": "colorFrom",
+      "type": "string",
+      "default": "\"#ffaa40\"",
+      "description": "The starting color of the gradient"
+    },
+    {
+      "name": "colorTo",
+      "type": "string",
+      "default": "\"#9c40ff\"",
+      "description": "The ending color of the gradient"
+    }
+  ],
+  "usage": "import { cn } from \"@/lib/utils\";\nimport { AnimatedGradientText } from \"@/registry/magicui/animated-gradient-text\";\nimport { ChevronRight } from \"lucide-react\";\n\nexport default function AnimatedGradientTextDemo() {\n  return (\n    <div className=\"group relative mx-auto flex items-center justify-center rounded-full px-4 py-1.5 shadow-[inset_0_-8px_10px_#8fdfff1f] transition-shadow duration-500 ease-out hover:shadow-[inset_0_-5px_10px_#8fdfff3f] \">\n      <span\n        className={cn(\n          \"absolute inset-0 block h-full w-full animate-gradient rounded-[inherit] bg-gradient-to-r from-[#ffaa40]/50 via-[#9c40ff]/50 to-[#ffaa40]/50 bg-[length:300%_100%] p-[1px]\",\n        )}\n        style={{\n          WebkitMask:\n            \"linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)\",\n          WebkitMaskComposite: \"destination-out\",\n          mask: \"linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)\",\n          maskComposite: \"subtract\",\n          WebkitClipPath: \"padding-box\",\n        }}\n      />\n      🎉 <hr className=\"mx-2 h-4 w-px shrink-0 bg-neutral-500\" />\n      <AnimatedGradientText className=\"text-sm font-medium\">\n        Introducing Magic UI\n      </AnimatedGradientText>\n      <ChevronRight\n        className=\"ml-1 size-4 stroke-neutral-500 transition-transform\n duration-300 ease-in-out group-hover:translate-x-0.5\"\n      />\n    </div>\n  );\n}\n",
+  "credits": {},
+  "examples": [
+    {
+      "name": "Demo 2",
+      "code": "import { AnimatedGradientText } from \"@/registry/magicui/animated-gradient-text\";\n\nexport default function AnimatedGradientTextDemo() {\n  return (\n    <AnimatedGradientText\n      speed={2}\n      colorFrom=\"#4ade80\"\n      colorTo=\"#06b6d4\"\n      className=\"text-4xl font-semibold tracking-tight\"\n    >\n      Fast Gradient\n    </AnimatedGradientText>\n  );\n}\n"
+    }
+  ]
+}

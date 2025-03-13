@@ -1,0 +1,58 @@
+{
+  "name": "ScriptCopyBtn",
+  "type": "component",
+  "description": "Copy code to clipboard",
+  "metadata": {
+    "title": "Script Copy Button",
+    "date": "2023-11-18",
+    "description": "Copy code to clipboard",
+    "author": "dillionverma",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/script-copy-btn\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/script-copy-btn\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/script-copy-btn\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/script-copy-btn\""
+  },
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "The class name to be applied to the component"
+    },
+    {
+      "name": "showMultiplePackageOptions",
+      "type": "boolean",
+      "default": "true",
+      "description": "Whether to show options for multiple package managers"
+    },
+    {
+      "name": "codeLanguage",
+      "type": "string",
+      "default": "-",
+      "description": "The language of the code snippet (e.g., \"shell\")"
+    },
+    {
+      "name": "lightTheme",
+      "type": "string",
+      "default": "-",
+      "description": "The theme to use for light mode"
+    },
+    {
+      "name": "darkTheme",
+      "type": "string",
+      "default": "-",
+      "description": "The theme to use for dark mode"
+    },
+    {
+      "name": "commandMap",
+      "type": "Record<string, string>",
+      "default": "-",
+      "description": "A map of package manager names to their respective commands"
+    }
+  ],
+  "usage": "import { ScriptCopyBtn } from \"@/registry/magicui/script-copy-btn\";\n\nexport default function ScriptCopyBtnDemo() {\n  const customCommandMap = {\n    npm: \"npm run shadcn add button\",\n    yarn: \"yarn shadcn add button\",\n    pnpm: \"pnpm dlx shadcn@latest add button\",\n    bun: \"bun x shadcn@latest add button\",\n  };\n  return (\n    <ScriptCopyBtn\n      showMultiplePackageOptions={true}\n      codeLanguage=\"shell\"\n      lightTheme=\"nord\"\n      darkTheme=\"vitesse-dark\"\n      commandMap={customCommandMap}\n    />\n  );\n}\n",
+  "credits": {}
+}

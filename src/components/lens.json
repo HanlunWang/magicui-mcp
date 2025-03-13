@@ -1,0 +1,86 @@
+{
+  "name": "Lens",
+  "type": "component",
+  "description": "A interactive component that enables zooming into images, videos and other elements.",
+  "metadata": {
+    "title": "Lens",
+    "date": "2025-01-13",
+    "description": "A interactive component that enables zooming into images, videos and other elements.",
+    "author": "h3rmel",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/lens\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/lens\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/lens\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/lens\""
+  },
+  "props": [
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "default": "-",
+      "description": "The content that will be magnified by the lens"
+    },
+    {
+      "name": "zoomFactor",
+      "type": "number",
+      "default": "1.3",
+      "description": "The magnification factor of the lens"
+    },
+    {
+      "name": "lensSize",
+      "type": "number",
+      "default": "170",
+      "description": "The size of the lens in pixels (works as a diameter)"
+    },
+    {
+      "name": "position",
+      "type": "Position",
+      "default": "-",
+      "description": "The current position of the lens"
+    },
+    {
+      "name": "defaultPosition",
+      "type": "Position",
+      "default": "-",
+      "description": "The initial position of the lens"
+    },
+    {
+      "name": "isStatic",
+      "type": "boolean",
+      "default": "false",
+      "description": "Determines if the lens will remain in a fixed position"
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "default": "0.1",
+      "description": "Duration of the animation when the lens moves (in seconds)"
+    },
+    {
+      "name": "lensColor",
+      "type": "string",
+      "default": "-",
+      "description": "The color of the lens (CSS color value)"
+    },
+    {
+      "name": "ariaLabel",
+      "type": "string",
+      "default": "-",
+      "description": "Accessibility label for the lens component"
+    }
+  ],
+  "usage": "/* eslint-disable @next/next/no-img-element */\n\n\"use client\";\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/card\";\nimport { Lens } from \"@/registry/magicui/lens\";\n\nexport default function LensDemo() {\n  return (\n    <Card className=\"relative max-w-md shadow-none\">\n      <CardHeader>\n        <Lens\n          zoomFactor={2}\n          lensSize={150}\n          isStatic={false}\n          ariaLabel=\"Zoom Area\"\n        >\n          <img\n            src=\"https://images.unsplash.com/photo-1736606355698-5efdb410fe93?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\"\n            alt=\"image placeholder\"\n            width={500}\n            height={500}\n          />\n        </Lens>\n      </CardHeader>\n      <CardContent>\n        <CardTitle className=\"text-2xl\">Your next camp</CardTitle>\n        <CardDescription>\n          See our latest and best camp destinations all across the five\n          continents of the globe.\n        </CardDescription>\n      </CardContent>\n      <CardFooter className=\"space-x-4\">\n        <Button>Let&apos;s go</Button>\n        <Button variant=\"secondary\">Another time</Button>\n      </CardFooter>\n    </Card>\n  );\n}\n",
+  "credits": {},
+  "examples": [
+    {
+      "name": "Demo 2",
+      "code": "/* eslint-disable @next/next/no-img-element */\n\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/card\";\nimport { Lens } from \"@/registry/magicui/lens\";\n\nexport default function LensDemo() {\n  return (\n    <Card className=\"relative max-w-md shadow-none\">\n      <CardHeader>\n        <Lens isStatic position={{ x: 260, y: 150 }}>\n          <img\n            src=\"https://images.unsplash.com/photo-1736606355698-5efdb410fe93?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\"\n            alt=\"image placeholder\"\n            width={500}\n            height={500}\n          />\n        </Lens>\n      </CardHeader>\n      <CardContent>\n        <CardTitle className=\"text-2xl\">Your next camp</CardTitle>\n        <CardDescription>\n          See our latest and best camp destinations all across the five\n          continents of the globe.\n        </CardDescription>\n      </CardContent>\n      <CardFooter className=\"space-x-4\">\n        <Button>Let&apos;s go</Button>\n        <Button variant=\"secondary\">Another time</Button>\n      </CardFooter>\n    </Card>\n  );\n}\n"
+    },
+    {
+      "name": "Demo 3",
+      "code": "/* eslint-disable @next/next/no-img-element */\n\nimport { Button } from \"@/components/ui/button\";\nimport {\n  Card,\n  CardContent,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/card\";\nimport { Lens } from \"@/registry/magicui/lens\";\n\nexport default function LensDemo() {\n  return (\n    <Card className=\"relative max-w-md shadow-none\">\n      <CardHeader>\n        <Lens defaultPosition={{ x: 260, y: 150 }}>\n          <img\n            src=\"https://images.unsplash.com/photo-1736606355698-5efdb410fe93?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\"\n            alt=\"image placeholder\"\n            width={500}\n            height={500}\n          />\n        </Lens>\n      </CardHeader>\n      <CardContent>\n        <CardTitle className=\"text-2xl\">Your next camp</CardTitle>\n        <CardDescription>\n          See our latest and best camp destinations all across the five\n          continents of the globe.\n        </CardDescription>\n      </CardContent>\n      <CardFooter className=\"space-x-4\">\n        <Button>Let&apos;s go</Button>\n        <Button variant=\"secondary\">Another time</Button>\n      </CardFooter>\n    </Card>\n  );\n}\n"
+    }
+  ]
+}

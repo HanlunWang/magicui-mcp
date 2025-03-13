@@ -1,0 +1,70 @@
+{
+  "name": "WarpBackground",
+  "type": "component",
+  "description": "A card with a time warping background effect.",
+  "metadata": {
+    "title": "Warp Background",
+    "date": "2024-12-24",
+    "description": "A card with a time warping background effect.",
+    "author": "magicui",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/warp-background\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/warp-background\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/warp-background\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/warp-background\""
+  },
+  "props": [
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "default": "-",
+      "description": "The content to be put inside the warp animation"
+    },
+    {
+      "name": "perspective",
+      "type": "number",
+      "default": "100",
+      "description": "The perspective of the warp animation"
+    },
+    {
+      "name": "beamsPerSide",
+      "type": "number",
+      "default": "3",
+      "description": "The number of beams per side"
+    },
+    {
+      "name": "beamSize",
+      "type": "number",
+      "default": "5",
+      "description": "The size of the beams"
+    },
+    {
+      "name": "beamDelayMax",
+      "type": "number",
+      "default": "3",
+      "description": "The maximum delay of the beams"
+    },
+    {
+      "name": "beamDelayMin",
+      "type": "number",
+      "default": "0",
+      "description": "The minimum delay of the beams"
+    },
+    {
+      "name": "beamDuration",
+      "type": "number",
+      "default": "3",
+      "description": "The duration of the beams"
+    },
+    {
+      "name": "gridColor",
+      "type": "string",
+      "default": "\"hsl(var(--border))\"",
+      "description": "The color of the grid lines"
+    }
+  ],
+  "usage": "import {\n  Card,\n  CardContent,\n  CardDescription,\n  CardTitle,\n} from \"@/components/ui/card\";\nimport { WarpBackground } from \"@/registry/magicui/warp-background\";\n\nexport default function ExampleComponentDemo() {\n  return (\n    <WarpBackground>\n      <Card className=\"w-80\">\n        <CardContent className=\"flex flex-col gap-2 p-4\">\n          <CardTitle>Congratulations on Your Promotion!</CardTitle>\n          <CardDescription>\n            Your hard work and dedication have paid off. We&apos;re thrilled to\n            see you take this next step in your career. Keep up the fantastic\n            work!\n          </CardDescription>\n        </CardContent>\n      </Card>\n    </WarpBackground>\n  );\n}\n",
+  "credits": {}
+}

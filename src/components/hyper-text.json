@@ -1,0 +1,70 @@
+{
+  "name": "HyperText",
+  "type": "component",
+  "description": "A text animation that scrambles letters before revealing the final text.",
+  "metadata": {
+    "title": "Hyper Text",
+    "date": "2024-08-03",
+    "description": "A text animation that scrambles letters before revealing the final text.",
+    "author": "SwayambhuPrasad",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/hyper-text\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/hyper-text\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/hyper-text\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/hyper-text\""
+  },
+  "props": [
+    {
+      "name": "children",
+      "type": "string",
+      "default": "-",
+      "description": "Text content to animate"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "The class name to be applied to the component"
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "default": "800",
+      "description": "Duration of the animation in milliseconds"
+    },
+    {
+      "name": "delay",
+      "type": "number",
+      "default": "0",
+      "description": "Delay before animation starts (in ms)"
+    },
+    {
+      "name": "as",
+      "type": "React.ElementType",
+      "default": "\"div\"",
+      "description": "Component to render as"
+    },
+    {
+      "name": "startOnView",
+      "type": "boolean",
+      "default": "false",
+      "description": "Start animation when component is in view"
+    },
+    {
+      "name": "animateOnHover",
+      "type": "boolean",
+      "default": "true",
+      "description": "Enable hover animation"
+    },
+    {
+      "name": "characterSet",
+      "type": "string[]",
+      "default": "A-Z",
+      "description": "Custom character set for scramble effect"
+    }
+  ],
+  "usage": "import { HyperText } from \"@/registry/magicui/hyper-text\";\n\nexport default function HyperTextDemo() {\n  return <HyperText>Hover Me!</HyperText>;\n}\n",
+  "credits": {}
+}

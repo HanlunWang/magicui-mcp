@@ -1,0 +1,22 @@
+{
+  "name": "Meteors",
+  "type": "component",
+  "description": "A meteor shower effect.",
+  "metadata": {
+    "title": "Meteors",
+    "date": "2023-07-13",
+    "description": "A meteor shower effect.",
+    "author": "dillionverma",
+    "published": true,
+    "video": "https://cdn.magicui.design/meteors.mp4"
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/meteors\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/meteors\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/meteors\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/meteors\""
+  },
+  "props": [],
+  "usage": "import { Meteors } from \"@/registry/magicui/meteors\";\n\nexport default function MeteorDemo() {\n  return (\n    <div className=\"relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border\">\n      <Meteors number={30} />\n      <span className=\"pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10\">\n        Meteors\n      </span>\n    </div>\n  );\n}\n",
+  "credits": {}
+}

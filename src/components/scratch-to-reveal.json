@@ -1,0 +1,67 @@
+{
+  "name": "ScratchToReveal",
+  "type": "component",
+  "description": "The ScratchToReveal component creates an interactive scratch-off effect with customizable dimensions and animations, revealing hidden content beneath.",
+  "metadata": {
+    "title": "Scratch To Reveal",
+    "date": "2024-06-28",
+    "description": "The ScratchToReveal component creates an interactive scratch-off effect with customizable dimensions and animations, revealing hidden content beneath.",
+    "author": "dipesh_the_dev",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/scratch-to-reveal\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/scratch-to-reveal\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/scratch-to-reveal\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/scratch-to-reveal\""
+  },
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "The class name to apply to the component."
+    },
+    {
+      "name": "width",
+      "type": "number",
+      "default": "-",
+      "description": "Width of the scratch container."
+    },
+    {
+      "name": "height",
+      "type": "number",
+      "default": "-",
+      "description": "Height of the scratch container."
+    },
+    {
+      "name": "minScratchPercentage",
+      "type": "number",
+      "default": "50",
+      "description": "Minimum percentage of scratched area to be considered as completed (Value between 0 and 100)."
+    },
+    {
+      "name": "children",
+      "type": "node",
+      "default": "-",
+      "description": "The content to display in the marquee."
+    },
+    {
+      "name": "onComplete",
+      "type": "function",
+      "default": "-",
+      "description": "Callback function called when scratch is completed"
+    },
+    {
+      "name": "gradientColors",
+      "type": "string[]",
+      "default": "-",
+      "description": "Gradient colors for the scratch effect."
+    }
+  ],
+  "usage": "import { ScratchToReveal } from \"@/registry/magicui/scratch-to-reveal\";\n\nexport default function ScratchToRevealDemo() {\n  return (\n    <ScratchToReveal\n      width={250}\n      height={250}\n      minScratchPercentage={70}\n      className=\"flex items-center justify-center overflow-hidden rounded-2xl border-2 bg-gray-100\"\n      gradientColors={[\"#A97CF8\", \"#F38CB8\", \"#FDCC92\"]}\n    >\n      <p className=\"text-9xl\">😎</p>\n    </ScratchToReveal>\n  );\n}\n",
+  "credits": {
+    "inspiration": "",
+    "inspirationUrl": "https://www.x.com/dipesh_the_dev"
+  }
+}

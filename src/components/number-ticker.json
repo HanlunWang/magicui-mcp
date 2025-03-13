@@ -1,0 +1,45 @@
+{
+  "name": "NumberTicker",
+  "type": "component",
+  "description": "Animate numbers to count up or down to a target number",
+  "metadata": {
+    "title": "Number Ticker",
+    "date": "2023-11-18",
+    "description": "Animate numbers to count up or down to a target number",
+    "author": "dillionverma",
+    "published": true,
+    "video": "https://cdn.magicui.design/number-ticker.mp4"
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/number-ticker\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/number-ticker\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/number-ticker\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/number-ticker\""
+  },
+  "props": [
+    {
+      "name": "value",
+      "type": "int",
+      "default": "0",
+      "description": "The value to count to"
+    },
+    {
+      "name": "direction",
+      "type": "up \\",
+      "default": "down",
+      "description": "`\"up\"`"
+    }
+  ],
+  "usage": "import { NumberTicker } from \"@/registry/magicui/number-ticker\";\n\nexport default function NumberTickerDemo() {\n  return (\n    <NumberTicker\n      value={100}\n      className=\"whitespace-pre-wrap text-8xl font-medium tracking-tighter text-black dark:text-white\"\n    />\n  );\n}\n",
+  "credits": {},
+  "examples": [
+    {
+      "name": "Decimal Demo",
+      "code": "import { NumberTicker } from \"@/registry/magicui/number-ticker\";\n\nexport default function NumberTickerDemo() {\n  return (\n    <NumberTicker\n      value={5.67}\n      decimalPlaces={2}\n      className=\"whitespace-pre-wrap text-8xl font-medium tracking-tighter text-black dark:text-white\"\n    />\n  );\n}\n"
+    },
+    {
+      "name": "Demo 2",
+      "code": "import { NumberTicker } from \"@/registry/magicui/number-ticker\";\n\nexport default function NumberTickerDemo() {\n  return (\n    <NumberTicker\n      value={100}\n      startValue={80}\n      className=\"whitespace-pre-wrap text-8xl font-medium tracking-tighter text-black dark:text-white\"\n    />\n  );\n}\n"
+    }
+  ]
+}

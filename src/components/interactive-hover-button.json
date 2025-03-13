@@ -1,0 +1,37 @@
+{
+  "name": "InteractiveHoverButton",
+  "type": "button",
+  "description": "A visually engaging button component that responds to hover with dynamic transitions, adapting smoothly between light and dark modes for enhanced user interactivity.",
+  "metadata": {
+    "title": "Interactive Hover Button",
+    "date": "2024-12-17",
+    "description": "A visually engaging button component that responds to hover with dynamic transitions, adapting smoothly between light and dark modes for enhanced user interactivity.",
+    "author": "aayushbharti",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/interactive-hover-button\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/interactive-hover-button\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/interactive-hover-button\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/interactive-hover-button\""
+  },
+  "props": [
+    {
+      "name": "text",
+      "type": "string",
+      "default": "Button",
+      "description": "The text to be displayed inside the button"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "Additional class names to style the component"
+    }
+  ],
+  "usage": "import { InteractiveHoverButton } from \"@/registry/magicui/interactive-hover-button\";\n\nexport default function InteractiveHoverButtonDemo() {\n  return <InteractiveHoverButton>Hover Me</InteractiveHoverButton>;\n}\n",
+  "credits": {
+    "inspiration": "@AayushBharti",
+    "inspirationUrl": "https://github.com/AayushBharti"
+  }
+}

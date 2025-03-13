@@ -1,0 +1,68 @@
+{
+  "name": "ShimmerButton",
+  "type": "button",
+  "description": "A button with a shimmering light which travels around the perimeter.",
+  "metadata": {
+    "title": "Shimmer Button",
+    "date": "2023-08-10",
+    "description": "A button with a shimmering light which travels around the perimeter.",
+    "author": "dillionverma",
+    "published": true,
+    "video": "https://cdn.magicui.design/shimmer-button.mp4"
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/shimmer-button\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/shimmer-button\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/shimmer-button\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/shimmer-button\""
+  },
+  "props": [
+    {
+      "name": "shimmerColor",
+      "type": "string",
+      "default": "#ffffff",
+      "description": "The color of the shimmer"
+    },
+    {
+      "name": "shimmerSize",
+      "type": "string",
+      "default": "0.05em",
+      "description": "The size of the shimmer"
+    },
+    {
+      "name": "borderRadius",
+      "type": "string",
+      "default": "100px",
+      "description": "The border radius of the button"
+    },
+    {
+      "name": "shimmerDuration",
+      "type": "string",
+      "default": "3s",
+      "description": "The duration of the spark animation"
+    },
+    {
+      "name": "background",
+      "type": "string",
+      "default": "rgba(0, 0, 0, 1)",
+      "description": "The background of the button"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": "undefined",
+      "description": "The class name of the button"
+    },
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "default": "undefined",
+      "description": "The children of the button"
+    }
+  ],
+  "usage": "import { ShimmerButton } from \"@/registry/magicui/shimmer-button\";\n\nexport default function ShimmerButtonDemo() {\n  return (\n    <ShimmerButton className=\"shadow-2xl\">\n      <span className=\"whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg\">\n        Shimmer Button\n      </span>\n    </ShimmerButton>\n  );\n}\n",
+  "credits": {
+    "inspiration": "@jh3yy",
+    "inspirationUrl": "https://twitter.com/jh3yy/status/1656423856276488192"
+  }
+}

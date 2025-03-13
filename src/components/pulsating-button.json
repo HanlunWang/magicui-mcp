@@ -1,0 +1,49 @@
+{
+  "name": "PulsatingButton",
+  "type": "button",
+  "description": "An animated pulsating button useful for capturing attention of users.",
+  "metadata": {
+    "title": "Pulsating Button",
+    "date": "2024-07-23",
+    "description": "An animated pulsating button useful for capturing attention of users.",
+    "author": "shikhap04",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/pulsating-button\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/pulsating-button\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/pulsating-button\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/pulsating-button\""
+  },
+  "props": [
+    {
+      "name": "children",
+      "type": "React.ReactNode",
+      "default": "-",
+      "description": "The content of the button."
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "Additional class names for the button."
+    },
+    {
+      "name": "pulseColor",
+      "type": "string",
+      "default": "-",
+      "description": "The rbg numbers only for the color of the pulsing waves."
+    },
+    {
+      "name": "duration",
+      "type": "string",
+      "default": "-",
+      "description": "The time span of one pulse."
+    }
+  ],
+  "usage": "import { PulsatingButton } from \"@/registry/magicui/pulsating-button\";\n\nexport default function PulsatingButtonDemo() {\n  return <PulsatingButton>Join Affiliate Program</PulsatingButton>;\n}\n",
+  "credits": {
+    "inspiration": "@shikhap04",
+    "inspirationUrl": "https://github.com/shikhap04"
+  }
+}

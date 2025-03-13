@@ -1,0 +1,64 @@
+{
+  "name": "CodeComparison",
+  "type": "component",
+  "description": "A component which compares two code snippets.",
+  "metadata": {
+    "title": "Code Comparison",
+    "date": "2024-10-02",
+    "description": "A component which compares two code snippets.",
+    "author": "dillionverma",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/code-comparison\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/code-comparison\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/code-comparison\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/code-comparison\""
+  },
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "The class name to be applied to the component"
+    },
+    {
+      "name": "beforeCode",
+      "type": "string",
+      "default": "-",
+      "description": "The code snippet to display in the \"before\" section"
+    },
+    {
+      "name": "afterCode",
+      "type": "string",
+      "default": "-",
+      "description": "The code snippet to display in the \"after\" section"
+    },
+    {
+      "name": "language",
+      "type": "string",
+      "default": "-",
+      "description": "The language of the code snippets (e.g., \"typescript\")"
+    },
+    {
+      "name": "filename",
+      "type": "string",
+      "default": "-",
+      "description": "The filename to display for the code snippets"
+    },
+    {
+      "name": "lightTheme",
+      "type": "string",
+      "default": "github-light",
+      "description": "The theme to use for light mode"
+    },
+    {
+      "name": "darkTheme",
+      "type": "string",
+      "default": "github-dark",
+      "description": "The theme to use for dark mode"
+    }
+  ],
+  "usage": "import { CodeComparison } from \"@/registry/magicui/code-comparison\";\n\nconst beforeCode = `import { NextRequest } from 'next/server';\n\nexport const middleware = async (req: NextRequest) => {\n  let user = undefined;\n  let team = undefined;\n  const token = req.headers.get('token');\n\n  if(req.nextUrl.pathname.startsWith('/auth')) {\n    user = await getUserByToken(token);\n\n    if(!user) {\n      return NextResponse.redirect('/login');\n    }\n  }\n\n  if(req.nextUrl.pathname.startsWith('/team')) {\n    user = await getUserByToken(token);\n\n    if(!user) {\n      return NextResponse.redirect('/login');\n    }\n\n    const slug = req.nextUrl.query.slug;\n    team = await getTeamBySlug(slug);\n\n    if(!team) {\n      return NextResponse.redirect('/');\n    }\n  }\n\n  return NextResponse.next();\n}\n\nexport const config = {\n  matcher: ['/((?!_next/|_static|_vercel|[\\\\w-]+\\\\.\\\\w+).*)'],\n};`;\n\nconst afterCode = `import { createMiddleware, type MiddlewareFunctionProps } from '@app/(auth)/auth/_middleware';\nimport { auth } from '@app/(auth)/auth/_middleware';\nimport { team } from '@app/(team)/team/_middleware';\n\nconst middlewares = {\n  '/auth{/:path?}': auth,\n  '/team{/:slug?}': [ auth, team ],\n};\n\nexport const middleware = createMiddleware(middlewares);\n\nexport const config = {\n  matcher: ['/((?!_next/|_static|_vercel|[\\\\w-]+\\\\.\\\\w+).*)'],\n};`;\n\nexport default function CodeComparisonDemo() {\n  return (\n    <CodeComparison\n      beforeCode={beforeCode}\n      afterCode={afterCode}\n      language=\"typescript\"\n      filename=\"middleware.ts\"\n      lightTheme=\"github-light\"\n      darkTheme=\"github-dark\"\n    />\n  );\n}\n",
+  "credits": {}
+}

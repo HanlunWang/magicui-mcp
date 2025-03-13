@@ -1,0 +1,34 @@
+{
+  "name": "AvatarCircles",
+  "type": "component",
+  "description": "Overlapping circles of avatars.",
+  "metadata": {
+    "title": "Avatar Circles",
+    "date": "2024-05-22",
+    "description": "Overlapping circles of avatars.",
+    "author": "tomonarifeehan",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/avatar-circles\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/avatar-circles\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/avatar-circles\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/avatar-circles\""
+  },
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "The class name to be applied to the component"
+    },
+    {
+      "name": "numPeople",
+      "type": "number",
+      "default": "99",
+      "description": "The number appearing in the last circle"
+    }
+  ],
+  "usage": "import { AvatarCircles } from \"@/registry/magicui/avatar-circles\";\n\nconst avatars = [\n  {\n    imageUrl: \"https://avatars.githubusercontent.com/u/16860528\",\n    profileUrl: \"https://github.com/dillionverma\",\n  },\n  {\n    imageUrl: \"https://avatars.githubusercontent.com/u/20110627\",\n    profileUrl: \"https://github.com/tomonarifeehan\",\n  },\n  {\n    imageUrl: \"https://avatars.githubusercontent.com/u/106103625\",\n    profileUrl: \"https://github.com/BankkRoll\",\n  },\n  {\n    imageUrl: \"https://avatars.githubusercontent.com/u/59228569\",\n    profileUrl: \"https://github.com/safethecode\",\n  },\n  {\n    imageUrl: \"https://avatars.githubusercontent.com/u/59442788\",\n    profileUrl: \"https://github.com/sanjay-mali\",\n  },\n  {\n    imageUrl: \"https://avatars.githubusercontent.com/u/89768406\",\n    profileUrl: \"https://github.com/itsarghyadas\",\n  },\n];\n\nexport default function AvatarCirclesDemo() {\n  return <AvatarCircles numPeople={99} avatarUrls={avatars} />;\n}\n",
+  "credits": {}
+}

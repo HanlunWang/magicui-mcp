@@ -1,0 +1,54 @@
+{
+  "name": "Confetti",
+  "type": "button",
+  "description": "Confetti animations are best used to delight your users when something special happens",
+  "metadata": {
+    "title": "Confetti",
+    "date": "2024-05-26",
+    "description": "Confetti animations are best used to delight your users when something special happens",
+    "author": "Bankkroll",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/confetti\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/confetti\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/confetti\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/confetti\""
+  },
+  "props": [],
+  "usage": "\"use client\";\n\nimport { useRef } from \"react\";\n\nimport { Confetti, type ConfettiRef } from \"@/registry/magicui/confetti\";\n\nexport default function ConfettiDemo() {\n  const confettiRef = useRef<ConfettiRef>(null);\n\n  return (\n    <div className=\"relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background\">\n      <span className=\"pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10\">\n        Confetti\n      </span>\n\n      <Confetti\n        ref={confettiRef}\n        className=\"absolute left-0 top-0 z-0 size-full\"\n        onMouseEnter={() => {\n          confettiRef.current?.fire({});\n        }}\n      />\n    </div>\n  );\n}\n",
+  "credits": {
+    "inspiration": "",
+    "inspirationUrl": "https://www.x.com/bankkroll_eth"
+  },
+  "examples": [
+    {
+      "name": "Basic Cannon",
+      "code": "import { ConfettiButton } from \"@/registry/magicui/confetti\";\n\nexport default function ConfettiButtonDemo() {\n  return (\n    <div className=\"relative\">\n      <ConfettiButton>Confetti 🎉</ConfettiButton>\n    </div>\n  );\n}\n"
+    },
+    {
+      "name": "Custom Shapes",
+      "code": "\"use client\";\n\nimport confetti from \"canvas-confetti\";\n\nimport { Button } from \"@/components/ui/button\";\n\nexport default function ConfettiCustomShapes() {\n  const handleClick = () => {\n    const scalar = 2;\n    const triangle = confetti.shapeFromPath({\n      path: \"M0 10 L5 0 L10 10z\",\n    });\n    const square = confetti.shapeFromPath({\n      path: \"M0 0 L10 0 L10 10 L0 10 Z\",\n    });\n    const coin = confetti.shapeFromPath({\n      path: \"M5 0 A5 5 0 1 0 5 10 A5 5 0 1 0 5 0 Z\",\n    });\n    const tree = confetti.shapeFromPath({\n      path: \"M5 0 L10 10 L0 10 Z\",\n    });\n\n    const defaults = {\n      spread: 360,\n      ticks: 60,\n      gravity: 0,\n      decay: 0.96,\n      startVelocity: 20,\n      shapes: [triangle, square, coin, tree],\n      scalar,\n    };\n\n    const shoot = () => {\n      confetti({\n        ...defaults,\n        particleCount: 30,\n      });\n\n      confetti({\n        ...defaults,\n        particleCount: 5,\n      });\n\n      confetti({\n        ...defaults,\n        particleCount: 15,\n        scalar: scalar / 2,\n        shapes: [\"circle\"],\n      });\n    };\n\n    setTimeout(shoot, 0);\n    setTimeout(shoot, 100);\n    setTimeout(shoot, 200);\n  };\n\n  return (\n    <div className=\"relative flex items-center justify-center\">\n      <Button onClick={handleClick}>Trigger Shapes</Button>\n    </div>\n  );\n}\n"
+    },
+    {
+      "name": "Emoji",
+      "code": "\"use client\";\n\nimport confetti from \"canvas-confetti\";\n\nimport { Button } from \"@/components/ui/button\";\n\nexport default function ConfettiEmoji() {\n  const handleClick = () => {\n    const scalar = 2;\n    const unicorn = confetti.shapeFromText({ text: \"🦄\", scalar });\n\n    const defaults = {\n      spread: 360,\n      ticks: 60,\n      gravity: 0,\n      decay: 0.96,\n      startVelocity: 20,\n      shapes: [unicorn],\n      scalar,\n    };\n\n    const shoot = () => {\n      confetti({\n        ...defaults,\n        particleCount: 30,\n      });\n\n      confetti({\n        ...defaults,\n        particleCount: 5,\n      });\n\n      confetti({\n        ...defaults,\n        particleCount: 15,\n        scalar: scalar / 2,\n        shapes: [\"circle\"],\n      });\n    };\n\n    setTimeout(shoot, 0);\n    setTimeout(shoot, 100);\n    setTimeout(shoot, 200);\n  };\n\n  return (\n    <div className=\"relative justify-center\">\n      <Button onClick={handleClick}>Trigger Emoji</Button>\n    </div>\n  );\n}\n"
+    },
+    {
+      "name": "Fireworks",
+      "code": "\"use client\";\n\nimport confetti from \"canvas-confetti\";\n\nimport { Button } from \"@/components/ui/button\";\n\nexport default function ConfettiFireworks() {\n  const handleClick = () => {\n    const duration = 5 * 1000;\n    const animationEnd = Date.now() + duration;\n    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };\n\n    const randomInRange = (min: number, max: number) =>\n      Math.random() * (max - min) + min;\n\n    const interval = window.setInterval(() => {\n      const timeLeft = animationEnd - Date.now();\n\n      if (timeLeft <= 0) {\n        return clearInterval(interval);\n      }\n\n      const particleCount = 50 * (timeLeft / duration);\n      confetti({\n        ...defaults,\n        particleCount,\n        origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },\n      });\n      confetti({\n        ...defaults,\n        particleCount,\n        origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },\n      });\n    }, 250);\n  };\n\n  return (\n    <div className=\"relative\">\n      <Button onClick={handleClick}>Trigger Fireworks</Button>\n    </div>\n  );\n}\n"
+    },
+    {
+      "name": "Random Direction",
+      "code": "import { ConfettiButton } from \"@/registry/magicui/confetti\";\n\nexport default function ConfettiButtonDemo() {\n  return (\n    <div className=\"relative\">\n      <ConfettiButton\n        options={{\n          get angle() {\n            return Math.random() * 360;\n          },\n        }}\n      >\n        Random Confetti 🎉\n      </ConfettiButton>\n    </div>\n  );\n}\n"
+    },
+    {
+      "name": "Side Cannons",
+      "code": "\"use client\";\n\nimport confetti from \"canvas-confetti\";\n\nimport { Button } from \"@/components/ui/button\";\n\nexport default function ConfettiSideCannons() {\n  const handleClick = () => {\n    const end = Date.now() + 3 * 1000; // 3 seconds\n    const colors = [\"#a786ff\", \"#fd8bbc\", \"#eca184\", \"#f8deb1\"];\n\n    const frame = () => {\n      if (Date.now() > end) return;\n\n      confetti({\n        particleCount: 2,\n        angle: 60,\n        spread: 55,\n        startVelocity: 60,\n        origin: { x: 0, y: 0.5 },\n        colors: colors,\n      });\n      confetti({\n        particleCount: 2,\n        angle: 120,\n        spread: 55,\n        startVelocity: 60,\n        origin: { x: 1, y: 0.5 },\n        colors: colors,\n      });\n\n      requestAnimationFrame(frame);\n    };\n\n    frame();\n  };\n\n  return (\n    <div className=\"relative\">\n      <Button onClick={handleClick}>Trigger Side Cannons</Button>\n    </div>\n  );\n}\n"
+    },
+    {
+      "name": "Stars",
+      "code": "\"use client\";\n\nimport confetti from \"canvas-confetti\";\n\nimport { Button } from \"@/components/ui/button\";\n\nexport default function ConfettiStars() {\n  const handleClick = () => {\n    const defaults = {\n      spread: 360,\n      ticks: 50,\n      gravity: 0,\n      decay: 0.94,\n      startVelocity: 30,\n      colors: [\"#FFE400\", \"#FFBD00\", \"#E89400\", \"#FFCA6C\", \"#FDFFB8\"],\n    };\n\n    const shoot = () => {\n      confetti({\n        ...defaults,\n        particleCount: 40,\n        scalar: 1.2,\n        shapes: [\"star\"],\n      });\n\n      confetti({\n        ...defaults,\n        particleCount: 10,\n        scalar: 0.75,\n        shapes: [\"circle\"],\n      });\n    };\n\n    setTimeout(shoot, 0);\n    setTimeout(shoot, 100);\n    setTimeout(shoot, 200);\n  };\n\n  return (\n    <div className=\"relative\">\n      <Button onClick={handleClick}>Trigger Stars</Button>\n    </div>\n  );\n}\n"
+    }
+  ]
+}

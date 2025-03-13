@@ -1,0 +1,59 @@
+{
+  "name": "RetroGrid",
+  "type": "component",
+  "description": "An animated scrolling retro grid effect",
+  "metadata": {
+    "title": "Retro Grid",
+    "date": "2023-11-23",
+    "description": "An animated scrolling retro grid effect",
+    "author": "dillionverma",
+    "published": true,
+    "video": "https://cdn.magicui.design/retro-grid.mp4"
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/retro-grid\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/retro-grid\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/retro-grid\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/retro-grid\""
+  },
+  "props": [
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "Additional CSS classes for the grid container"
+    },
+    {
+      "name": "angle",
+      "type": "number",
+      "default": "65",
+      "description": "Rotation angle of the grid in degrees"
+    },
+    {
+      "name": "cellSize",
+      "type": "number",
+      "default": "60",
+      "description": "Grid cell size in pixels"
+    },
+    {
+      "name": "opacity",
+      "type": "number",
+      "default": "0.5",
+      "description": "Grid opacity value between 0 and 1"
+    },
+    {
+      "name": "lightLineColor",
+      "type": "string",
+      "default": "\"gray\"",
+      "description": "Grid line color in light mode"
+    },
+    {
+      "name": "darkLineColor",
+      "type": "string",
+      "default": "\"gray\"",
+      "description": "Grid line color in dark mode"
+    }
+  ],
+  "usage": "\"use client\";\n\nimport { RetroGrid } from \"@/registry/magicui/retro-grid\";\n\nexport default function RetroGridDemo() {\n  return (\n    <div className=\"relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background\">\n      <span className=\"pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-center text-7xl font-bold leading-none tracking-tighter text-transparent\">\n        Retro Grid\n      </span>\n\n      <RetroGrid />\n    </div>\n  );\n}\n",
+  "credits": {}
+}

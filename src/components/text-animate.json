@@ -1,0 +1,98 @@
+{
+  "name": "TextAnimate",
+  "type": "component",
+  "description": "A text animation component that animates text using a variety of different animations.",
+  "metadata": {
+    "title": "Text Animate",
+    "date": "2025-01-01",
+    "description": "A text animation component that animates text using a variety of different animations.",
+    "author": "dillionverma",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/text-animate\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/text-animate\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/text-animate\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/text-animate\""
+  },
+  "props": [
+    {
+      "name": "children",
+      "type": "string",
+      "default": "-",
+      "description": "The text content to animate"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "The class name to be applied to the component"
+    },
+    {
+      "name": "delay",
+      "type": "number",
+      "default": "0",
+      "description": "Delay before animation starts"
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "default": "0.3",
+      "description": "Duration of the animation"
+    },
+    {
+      "name": "variants",
+      "type": "Variants",
+      "default": "-",
+      "description": "Custom motion variants for the animation"
+    },
+    {
+      "name": "as",
+      "type": "ElementType",
+      "default": "\"p\"",
+      "description": "The element type to render"
+    },
+    {
+      "name": "by",
+      "type": "\"text\" \\",
+      "default": "\"word\" \\",
+      "description": "\"character\" \\"
+    }
+  ],
+  "usage": "import { TextAnimate } from \"@/registry/magicui/text-animate\";\n\nexport default function TextAnimateDemo() {\n  return (\n    <TextAnimate animation=\"blurInUp\" by=\"character\" once>\n      Blur in by character\n    </TextAnimate>\n  );\n}\n",
+  "credits": {},
+  "examples": [
+    {
+      "name": "Demo 2",
+      "code": "import { TextAnimate } from \"@/registry/magicui/text-animate\";\n\nexport default function TextAnimateDemo2() {\n  return (\n    <TextAnimate animation=\"blurIn\" as=\"h1\">\n      Blur in text\n    </TextAnimate>\n  );\n}\n"
+    },
+    {
+      "name": "Demo 3",
+      "code": "import { TextAnimate } from \"@/registry/magicui/text-animate\";\n\nexport default function TextAnimateDemo3() {\n  return (\n    <TextAnimate animation=\"slideUp\" by=\"word\">\n      Slide up by word\n    </TextAnimate>\n  );\n}\n"
+    },
+    {
+      "name": "Demo 4",
+      "code": "import { TextAnimate } from \"@/registry/magicui/text-animate\";\n\nexport default function TextAnimateDemo4() {\n  return (\n    <TextAnimate animation=\"scaleUp\" by=\"text\">\n      Scale up by text\n    </TextAnimate>\n  );\n}\n"
+    },
+    {
+      "name": "Demo 5",
+      "code": "import { TextAnimate } from \"@/registry/magicui/text-animate\";\n\nexport default function TextAnimateDemo5() {\n  return (\n    <TextAnimate animation=\"fadeIn\" by=\"line\" as=\"p\">\n      {`Fade in by line as paragraph\\n\\nFade in by line as paragraph\\n\\nFade in by line as paragraph`}\n    </TextAnimate>\n  );\n}\n"
+    },
+    {
+      "name": "Demo 6",
+      "code": "import { TextAnimate } from \"@/registry/magicui/text-animate\";\n\nexport default function TextAnimateDemo6() {\n  return (\n    <TextAnimate animation=\"slideLeft\" by=\"character\">\n      Slide left by character\n    </TextAnimate>\n  );\n}\n"
+    },
+    {
+      "name": "Demo 7",
+      "code": "import { TextAnimate } from \"@/registry/magicui/text-animate\";\n\nexport default function TextAnimateDemo7() {\n  return (\n    <TextAnimate animation=\"blurInUp\" by=\"character\" delay={2}>\n      Blur in by character\n    </TextAnimate>\n  );\n}\n"
+    },
+    {
+      "name": "Demo 8",
+      "code": "import { TextAnimate } from \"@/registry/magicui/text-animate\";\n\nexport default function TextAnimateDemo8() {\n  return (\n    <TextAnimate animation=\"blurInUp\" by=\"character\" duration={5}>\n      Blur in by character\n    </TextAnimate>\n  );\n}\n"
+    },
+    {
+      "name": "Demo 9",
+      "code": "\"use client\";\n\nimport { TextAnimate } from \"@/registry/magicui/text-animate\";\n\nexport default function TextAnimateDemo9() {\n  return (\n    <TextAnimate\n      variants={{\n        hidden: {\n          opacity: 0,\n          y: 30,\n          rotate: 45,\n          scale: 0.5,\n        },\n        show: (i) => ({\n          opacity: 1,\n          y: 0,\n          rotate: 0,\n          scale: 1,\n          transition: {\n            delay: i * 0.1,\n            duration: 0.4,\n            y: {\n              type: \"spring\",\n              damping: 12,\n              stiffness: 200,\n              mass: 0.8,\n            },\n            rotate: {\n              type: \"spring\",\n              damping: 8,\n              stiffness: 150,\n            },\n            scale: {\n              type: \"spring\",\n              damping: 10,\n              stiffness: 300,\n            },\n          },\n        }),\n        exit: (i) => ({\n          opacity: 0,\n          y: 30,\n          rotate: 45,\n          scale: 0.5,\n          transition: {\n            delay: i * 0.1,\n            duration: 0.4,\n          },\n        }),\n      }}\n      by=\"character\"\n    >\n      Wavy Motion!\n    </TextAnimate>\n  );\n}\n"
+    }
+  ]
+}

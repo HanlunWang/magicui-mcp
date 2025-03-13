@@ -1,0 +1,58 @@
+{
+  "name": "TypingAnimation",
+  "type": "component",
+  "description": "Characters appearing in typed animation",
+  "metadata": {
+    "title": "Typing Animation",
+    "date": "2024-05-22",
+    "description": "Characters appearing in typed animation",
+    "author": "imanubhardwaj",
+    "published": true
+  },
+  "installation": {
+    "pnpm": "pnpm dlx shadcn@latest add \"https://magicui.design/r/typing-animation\"",
+    "npm": "npx shadcn@latest add \"https://magicui.design/r/typing-animation\"",
+    "yarn": "yarn dlx shadcn@latest add \"https://magicui.design/r/typing-animation\"",
+    "bun": "bunx --bun shadcn@latest add \"https://magicui.design/r/typing-animation\""
+  },
+  "props": [
+    {
+      "name": "children",
+      "type": "string",
+      "default": "-",
+      "description": "Text content to animate"
+    },
+    {
+      "name": "className",
+      "type": "string",
+      "default": "-",
+      "description": "The class name to be applied to the component"
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "default": "100",
+      "description": "Duration to wait in between each char type"
+    },
+    {
+      "name": "delay",
+      "type": "number",
+      "default": "0",
+      "description": "Delay before animation starts (in ms)"
+    },
+    {
+      "name": "as",
+      "type": "React.ElementType",
+      "default": "\"div\"",
+      "description": "Component to render as"
+    },
+    {
+      "name": "startOnView",
+      "type": "boolean",
+      "default": "false",
+      "description": "Start animation when component is in view"
+    }
+  ],
+  "usage": "import { TypingAnimation } from \"@/registry/magicui/typing-animation\";\n\nexport default function TypingAnimationDemo() {\n  return <TypingAnimation>Typing Animation</TypingAnimation>;\n}\n",
+  "credits": {}
+}
