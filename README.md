@@ -1,28 +1,46 @@
-# Magic UI MCP Service
+# Model Context Protocol (MCP) for Magic UI Components
 
-A Model Context Protocol (MCP) service that provides AI with information about Magic UI components, allowing it to understand and use them effectively.
+This MCP server provides AI assistants with comprehensive information about Magic UI components, enabling them to effectively understand, recommend, and use these components in development projects.
+
+> **Note:** This is an MCP wrapper for [Magic UI](https://magicui.design/), a beautiful UI component library. Visit the [original repository](https://github.com/magicuidesign/magicui) for more information.
 
 ## Overview
 
-This MCP service enables AI to:
+The Magic UI MCP service allows AI to:
 
-- Discover available Magic UI components
-- Get detailed information about specific components
-- Find components by type (e.g., buttons)
-- Understand component installation and usage
-- Select appropriate components based on requirements
-
-## Features
-
-- **Component Information**: Get detailed information about Magic UI components, including descriptions, installation instructions, props, and usage examples.
-- **Component Discovery**: Find components by name or type.
-- **Component Selection**: Get help selecting the most appropriate component for specific requirements.
+- Access detailed documentation for Magic UI components
+- Discover components by name or type
+- Get installation and usage instructions
+- Understand component props and API
+- Receive recommendations for specific use cases
 
 ## Installation
 
+The package is now available on npm and can be installed using the following commands:
+
+### Option 1: Install globally from npm
+
+```bash
+# Install globally
+npm install -g magicui-mcp
+# or
+npm i -g magicui-mcp
+
+# Run the server
+magicui-mcp
+```
+
+### Option 2: Use with npx (no installation required)
+
+```bash
+npx magicui-mcp
+```
+
+### Option 3: Clone and build from source
+
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/magicui-mcp.git
+git clone https://github.com/HanlunWang/magicui-mcp.git
 cd magicui-mcp
 
 # Install dependencies
@@ -30,60 +48,85 @@ npm install
 
 # Build the project
 npm run build
-```
 
-## Usage
-
-### Starting the MCP Server
-
-```bash
-# Start the server
+# Run the server
 npm start
 ```
 
-### Using with AI Tools
-
-This MCP service can be used with any AI tool that supports the Model Context Protocol. When connected, the AI can:
-
-1. **Get Component Information**:
-
-   - Get details about a specific component (e.g., ShimmerButton)
-   - View installation instructions, props, and usage examples
-
-2. **Discover Components**:
-
-   - List all available components
-   - Find components by type (e.g., buttons)
-
-3. **Select Components**:
-   - Get help selecting the most appropriate component based on requirements
-
-## Available Components
-
-Currently, the service includes information about the following Magic UI components:
-
-- **ShimmerButton**: A button with a shimmering light which travels around the perimeter.
-- **GlowButton**: A button with a glowing effect on hover.
-
-## Development
-
-### Project Structure
+## CLI Options
 
 ```
-magicui-mcp/
-├── src/
-│   ├── index.ts        # Main entry point
-│   ├── server.ts       # MCP server implementation
-│   ├── database.ts     # Component database
-│   └── types.ts        # TypeScript type definitions
-├── dist/               # Compiled JavaScript files
-├── package.json        # Project dependencies
-└── tsconfig.json       # TypeScript configuration
+Usage:
+  npx magicui-mcp [options]
+
+Options:
+  -h, --help      Show this help message
+  -v, --version   Show version information
+  -p, --port      Specify the port to run the server on (default: 3000)
 ```
 
-### Adding New Components
+## Using with Claude for Desktop
 
-To add new Magic UI components to the database, edit the `database.ts` file and add the component information to the `initializeComponents` method.
+1. Make sure you have [Claude for Desktop](https://claude.ai/download) installed and updated
+2. Open your Claude configuration file:
+
+```bash
+# On macOS
+code ~/Library/Application\ Support/Claude/claude_desktop_config.json
+
+# On Windows
+code %APPDATA%\Claude\claude_desktop_config.json
+```
+
+3. Add the Magic UI MCP server to your configuration:
+
+```json
+{
+  "mcpServers": {
+    "magicui": {
+      "command": "npx",
+      "args": ["magicui-mcp"]
+    }
+  }
+}
+```
+
+4. Save the file and restart Claude for Desktop
+5. You should now see the hammer icon in the chat interface indicating MCP tools are available
+
+## Using with Cursor
+
+1. Make sure you have [Cursor](https://cursor.sh/) installed and updated
+2. Open Cursor and ensure the Cursor Composer is enabled
+3. Open the MCP configuration panel in Cursor's settings
+4. Add a new MCP server with the following settings:
+   - Name: Magic UI
+   - Command: `npx`
+   - Arguments: `magicui-mcp`
+5. Save the configuration
+6. The Magic UI MCP tools should now be available in the Cursor Composer
+
+## Available Tools
+
+The Magic UI MCP server provides the following tools:
+
+- **getComponent**: Retrieve detailed information about a specific component by name
+- **getComponentsByType**: Find components by their type (e.g., "button", "input")
+- **getAllComponents**: List all available Magic UI components
+
+## Example Queries
+
+When using Claude or Cursor with the Magic UI MCP:
+
+- "What components are available in Magic UI?"
+- "Show me how to use the ShimmerButton component"
+- "I need a button with a glowing effect, what component should I use?"
+- "What props does the GlowButton accept?"
+- "Help me implement a Magic UI component for my React application"
+
+## Contributing
+
+To add or update component information, modify the `database.ts` file in the `src` directory and rebuild the project.
 
 ## License
 

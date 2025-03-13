@@ -4,10 +4,19 @@
   "description": "A Model Context Protocol (MCP) service for Magic UI components",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "bin": {
+    "magicui-mcp": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "ts-node src/index.ts",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -16,8 +25,12 @@
     "ai",
     "components"
   ],
-  "author": "",
+  "author": "Hanlun Wang",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HanlunWang/magicui-mcp.git"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.7.0",
     "zod": "^3.24.2"
@@ -26,5 +39,11 @@
     "@types/node": "^22.13.10",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

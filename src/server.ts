@@ -8,13 +8,23 @@ import { componentDatabase } from "./database";
 import { MagicUIComponent } from "./types";
 
 /**
+ * Configuration options for the Magic UI MCP Server
+ */
+export interface MagicUIMcpServerOptions {
+  port?: number;
+}
+
+/**
  * Magic UI MCP Server
  * Provides tools and resources for AI to understand and use Magic UI components
  */
 export class MagicUIMcpServer {
   private server: McpServer;
+  public readonly port: number;
 
-  constructor() {
+  constructor(options: MagicUIMcpServerOptions = {}) {
+    this.port = options.port || 3000;
+
     this.server = new McpServer({
       name: "magicui-mcp",
       version: "1.0.0",
@@ -310,7 +320,7 @@ export class MagicUIMcpServer {
   async start(): Promise<void> {
     const transport = new StdioServerTransport();
     await this.server.connect(transport);
-    console.error("Magic UI MCP Server started");
+    console.error(`Magic UI MCP Server started on port ${this.port}`);
   }
 }
 
